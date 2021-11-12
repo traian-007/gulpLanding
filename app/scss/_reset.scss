@@ -1,11 +1,7 @@
-html{
-  box-sizing: border-box;
-}
-
 *,
 *::after,
-*::before{
-  box-sizing: inherit;
+*::before {
+  box-sizing: border-box;
 }
 
 ul[class],
@@ -38,7 +34,7 @@ ul[class] {
 
 img {
   max-width: 100%;
-  display: block;
+  // display: block;
 }
 
 input,
@@ -48,6 +44,6 @@ select {
   font: inherit;
 }
 
-a{
+a {
   text-decoration: none;
 }

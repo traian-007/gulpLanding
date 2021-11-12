@@ -10,7 +10,7 @@
   background-position: center;
   background-size: cover;
   padding: 26px 0 515px;
-  width: 1520px;
+  min-width: 1440px;
   &__smilik {
     height: 56px;
     width: 56px;
@@ -167,20 +167,18 @@
 .table {
   position: absolute;
   top: 613px;
-  width: 1520px;
+  min-width: 1440px;
   padding: 0 40px;
   left: 0;
   z-index: 5;
   right: 0;
+  text-align: center;
   &__main {
     position: relative;
-    background-image: url(../images/Content.png);
     background-size: cover;
     background-position: center;
-    margin-left: 40px;
     background-repeat: no-repeat;
-    width: 1324px;
-    height: 725px;
+    margin: 0 auto;
   }
   &__score {
     position: absolute;
@@ -280,12 +278,11 @@
     }
   }
   &__developer-quiz {
-    background-image: url(../images/DeveloperQuiz.png);
-    background-position: center;
+    // background-image: url(../images/DeveloperQuiz.png) center center;
+    // background-position: center;
     // background-size: contain;
-    object-fit: cover;
+    // object-fit: cover;
     width: 328px;
-    height: 360px;
     position: absolute;
     left: 40px;
     top: 395px;
@@ -336,13 +333,9 @@
         height: 20px;
         flex-grow: 0;
         margin: 0 35px 4px 0;
-        font-family: Inter;
         font-size: 14px;
         font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
         line-height: 1.43;
-        letter-spacing: normal;
         text-align: left;
         color: #101010;
       }
@@ -351,44 +344,33 @@
         height: 30px;
         flex-grow: 0;
         margin: 4px 0 0;
-        font-family: Inter;
         font-size: 12px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
         text-align: left;
         color: rgba(0, 0, 0, 0.6);
       }
     }
   }
   &__question {
-    background-image: url(../images/Quastion.png);
-    width: 213px;
-    height: 285px;
+    // background-image: url(../images/Quastion.png);
+    // width: 213px;
+    // height: 285px;
     background-position: center;
     // background-size: contain;
     object-fit: cover;
     position: absolute;
-    right: 193px;
+    right: 150px;
     bottom: -80px;
     box-shadow: 0px 15px 55px rgba(0, 0, 0, 0.07);
     border-radius: 15px;
   }
 }
 .wrapper {
-  width: 1520px;
-  // height: 1479px;
+  min-width: 1440px;
   z-index: 2;
-  flex-grow: 0;
   padding: 365px 0 0;
-  background-color: linear-gradient(to bottom, rgba(253, 255, 246, 0), #fdfff6);
-  background-image: url("../images/Light-background.png");
+  background-image: url("../images/Noise.svg"),
+    linear-gradient(to bottom, #fdfff600, #fdfff6);
   position: absolute;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .main {
@@ -494,7 +476,11 @@
     position: absolute;
     height: 1px;
     width: 1360px;
-    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      #000000 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
     left: 40px;
     bottom: 107px;
   }
@@ -534,18 +520,4 @@
       color: #757575;
     }
   }
-}
-////////////////////////////////
-
-canvas {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: -50px;
-  left: 400px;
-  z-index: 1;
-}
-
-.dg.ac {
-  z-index: -1;
 }

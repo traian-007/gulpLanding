@@ -5,7 +5,7 @@ function init() {
   createWorld();
   createLights();
   createGrid();
-  createGUI();
+  // createGUI();
   createSkin();
   createLife();
 }
@@ -35,20 +35,21 @@ function createWorld() {
   _height = window.innerHeight;
   //---
   scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(Theme._dark, 150, 320);
+  scene.fog = new THREE.Fog(Theme._dark, 1, 2);
   scene.background = new THREE.Color(Theme._dark);
   scene.add(groupMoon);
   //---
-  camera = new THREE.PerspectiveCamera(20, _width / _height, 1, 1000);
-  camera.position.set(0, 10, 120);
+  camera = new THREE.PerspectiveCamera(15, 1, 1, 400);
+  camera.position.set(4, 10, 200);
+
   //---
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-  renderer.setSize(_width, _height);
+  renderer.setSize(400, 400);
   renderer.shadowMap.enabled = true;
   //---
-  document.body.appendChild(renderer.domElement);
+  document.querySelector(".header__content").appendChild(renderer.domElement);
   //---
-  window.addEventListener("resize", onWindowResize, false);
+  // window.addEventListener("resize", onWindowResize, false);
   console.log("Create world");
 }
 function onWindowResize() {
@@ -236,7 +237,7 @@ function createSkin() {
 var gridHelper;
 
 function createGrid(_gridY = -20) {
-  gridHelper = new THREE.GridHelper(200, 20, Theme._cont, Theme._gray);
+  gridHelper = new THREE.GridHelper(100, 20, Theme._cont, Theme._gray);
   gridHelper.position.y = _gridY;
   scene.add(gridHelper);
 }
