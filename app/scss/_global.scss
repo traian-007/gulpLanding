@@ -13,7 +13,10 @@ body {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  // min-width: 1440px;
+  // max-width: 1600px;
   overflow-x: hidden;
+  // background-image: url("../images/Noise.svg");
 }
 
 .wrapper {
@@ -22,15 +25,10 @@ body {
   min-height: 100%;
 }
 
-// .main {
-//   flex: 1 0 auto;
-// }
-// .footer {
-//   flex: 0 0 auto;
-// }
-
 .container {
-  // max-width: 100%;
   margin: 0 auto;
   padding: 0 155px;
+}
+.br {
+  display: none;
 }

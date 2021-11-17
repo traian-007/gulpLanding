@@ -15,16 +15,19 @@
 <body>
   <header class="header">
     <div class="container">
-      <img class="header__smilik" src="images/smilik.png" alt="smilik">
+      <div class="header__smilik">
+        <div class="header__smilik-group"><div class="header__smilik-ab"></div></div>
+      </div>
       <div class="header__content">
         <div class="header__content-ellipse1"></div>
         <div class="header__information">
-          <h1 class="header__title">Create high-quality assessments, fast</h1>
+          <h1 class="header__title">Create<br class="br"> high-quality assessments, fast</h1>
           <div class="header__assessments">
             <button class="header__btn">
               <img class="header__btn-img" src="images/windows.png" alt="windows">
               <p class="header__btn-text">Sign in with microsoft</p>
             </button>
+            <div></div>
             <div class="header__assessments-disciplines">
               <div class="header__assessments-disciplines-icons">
                 <div class="header__assessments-disciplines-icon header__assessments-disciplines-icon1"></div>
@@ -50,40 +53,45 @@
   <section class="table">
     <!-- <div class="table__main"></div> -->
     <img class="table__main" src="./images/Content.svg" alt="">
-    <div class="table__score">
-      <div class="table__score__text">Answered</div>
-      <div class="table__score__information">
-        <div class="table__score__information-foto"></div>
-        <div class="table__score__information-description">
-          <div class="table__score__information-description-name">Zach Galifianakis</div>
-          <div class="table__score__information-description-prof">Java developer</div>
-        </div>
-        <div class="table__score__information-data">
-          <div class="table__score__information-data-minutes">83</div>
-          <div class="table__score__information-data-title">
-            Minutes
+    <div class="parallax">
+      <div class="table__score">
+        <div class="table__score__text">Answered</div>
+        <div class="table__score__information">
+          <div class="table__score__information-foto"></div>
+          <div class="table__score__information-description">
+            <div class="table__score__information-description-name">Zach Galifianakis</div>
+            <div class="table__score__information-description-prof">Java developer</div>
           </div>
-          <div class="table__score__information-data-par">/ <span class="table__score__information-data-questions">90</span></div>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="table__developer-quiz"></div> -->
-    <img class="table__developer-quiz" src="./images/DeveloperQuiz.svg" alt="">
-    <div class="table__hiring">
-      <div class="table__hiring-progress">
-        <div class="table__hiring-progress-circle">
-          <div class="table__hiring-progress-score">
-            57%
+          <div class="table__score__information-data">
+            <div class="table__score__information-data-minutes">83</div>
+            <div class="table__score__information-data-title">
+              Minutes
+            </div>
+            <div class="table__score__information-data-par">/ <span class="table__score__information-data-questions">90</span></div>
           </div>
         </div>
       </div>
-      <div class="table__hiring-description">
-        <div class="table__hiring-description-title">Faster hiring process</div>
-        <div class="table__hiring-description-text">Don't waste your time on screening CVs and pre-qualifying inter</div>
+      <!-- <div class="table__developer-quiz"></div> -->
+      <img class="table__developer-quiz" src="./images/DeveloperQuiz.svg" alt="">
+      <div class="table__hiring">
+        <div class="table__hiring-progress">
+          <div class="table__hiring-progress-circle">
+            <div class="table__hiring-progress-circle-arc table__hiring-progress-circle-arc-start"></div>
+            <div class="table__hiring-progress-circle-arc table__hiring-progress-circle-arc-end"></div>
+            <div class="table__hiring-progress-score">
+              57%
+            </div>
+          </div>
+        </div>
+        <div class="table__hiring-description">
+          <div class="table__hiring-description-title">Faster hiring process</div>
+          <div class="table__hiring-description-text">Don't waste your time on screening CVs and pre-qualifying inter</div>
+        </div>
       </div>
+      <!-- <div class="table__question"></div> -->
+      <img class="table__question" src="./images/Quastion.svg" alt="">
     </div>
-    <!-- <div class="table__question"></div> -->
-    <img class="table__question" src="./images/Quastion.svg" alt="">
+    
   </section>
   <div class="wrapper">
     <main class="main">
@@ -138,16 +146,40 @@
       </div>
     </main>
     <footer class="footer">
-      <div class="footer__ellipse1"></div>
+   
       <div class="footer__first">
         <div class="footer__first__logo"></div>
         <div class="footer__first__assessment">2021 © assessment</div>
       </div>
       <div class="footer__second">
         <div class="footer__second__report">Report a bug or ask any quastions:</div>
-        <div class="footer__second__email">entestingserviceacc@endava.co</div>
+        <a class="footer__second__email" href = "#" >entestingserviceacc@endava.co</a>
+        <div class="footer__second__email-inf copy">Copy to clipboard</div>
+        <div class="footer__second__email-inf copied">Copied</div>
       </div>
     </footer>
+    <div class="footer__ellipse2"></div>
+    <div class="footer__ellipse3"></div>
+  </div>
+  <div class="page">
+    <div class="page__header">
+      <div class="page__header-time">9:45</div>
+      <div class="page__header-icons">
+        <img class="page__header-icon" src="./images/CellularConnection.png" alt="">
+        <img class="page__header-icon" src="./images/Wifi.png" alt="">
+        <img class="page__header-icon" src="./images/Capacity.png" alt="">
+      </div>
+    </div>
+    <img class="page__gif" src="./images/moon.png"></img>
+    <div class="page__main">
+      <img class="page__main-smilik" src="./images/face.png"></img>
+      <h1 class="page__main-title">No Mobile Experience</h1>
+      <p class="page__main-text">EAT only supports desktop experience for now. We know it is not ideal - but we are on it.
+        Enjoy the full experience on the desktop.</p>
+      <div class="page__main-footer">
+        <img src="./images/Seperator.png" alt="" class="page__main-footer-separator">
+      </div>
+    </div>
   </div>
   
   <script src="js/main.min.js"></script>

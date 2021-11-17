@@ -40,14 +40,27 @@ function createWorld() {
   scene.add(groupMoon);
   //---
   camera = new THREE.PerspectiveCamera(15, 1, 1, 400);
+
   camera.position.set(4, 10, 200);
 
   //---
-  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-  renderer.setSize(400, 400);
+  renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: false,
+  });
+  if (_width < 770) {
+    renderer.setSize(200, 200);
+  } else {
+    renderer.setSize(400, 400);
+  }
+
+  console.log("afd", window.innerWidth);
+
   renderer.shadowMap.enabled = true;
   //---
-  document.querySelector(".header__content").appendChild(renderer.domElement);
+  document
+    .querySelector(".header__content")
+    .appendChild(renderer.domElement);
   //---
   // window.addEventListener("resize", onWindowResize, false);
   console.log("Create world");
@@ -61,14 +74,25 @@ function onWindowResize() {
 }
 //--------------------------------------------------------------------
 function createLights() {
-  _ambientLights = new THREE.HemisphereLight(Theme._cont, Theme._white, 1);
+  _ambientLights = new THREE.HemisphereLight(
+    Theme._cont,
+    Theme._white,
+    1
+  );
   _backlight = new THREE.PointLight(Theme._white, 1);
   _backlight.position.set(-5, -20, -20);
   //---
-  _rectAreaLight = new THREE.RectAreaLight(Theme._white, 20, 3, 3);
+  _rectAreaLight = new THREE.RectAreaLight(
+    Theme._white,
+    20,
+    3,
+    3
+  );
   _rectAreaLight.position.set(0, 0, 2);
   //---
-  _rectAreaLightHelper = new THREE.RectAreaLightHelper(_rectAreaLight);
+  _rectAreaLightHelper = new THREE.RectAreaLightHelper(
+    _rectAreaLight
+  );
   //---
   _frontlight = new THREE.PointLight(Theme._white, 2);
   _frontlight.position.set(20, 10, 0);
@@ -153,12 +177,22 @@ function randomMoon() {
   //TweenMax.to(options.perlin, 2, {time: 1 + Math.random() * 4});
   //TweenMax.to(options.perlin, 1, {dnoise: Math.random() * 100});
 
-  TweenMax.to(options.chroma, 1, { RGBr: Math.random() * 10 });
-  TweenMax.to(options.chroma, 1, { RGBg: Math.random() * 10 });
-  TweenMax.to(options.chroma, 1, { RGBb: Math.random() * 10 });
+  TweenMax.to(options.chroma, 1, {
+    RGBr: Math.random() * 10,
+  });
+  TweenMax.to(options.chroma, 1, {
+    RGBg: Math.random() * 10,
+  });
+  TweenMax.to(options.chroma, 1, {
+    RGBb: Math.random() * 10,
+  });
 
-  TweenMax.to(options.chroma, 1, { RGBn: Math.random() * 2 });
-  TweenMax.to(options.chroma, 1, { RGBm: Math.random() * 5 });
+  TweenMax.to(options.chroma, 1, {
+    RGBn: Math.random() * 2,
+  });
+  TweenMax.to(options.chroma, 1, {
+    RGBm: Math.random() * 5,
+  });
 
   /*options.perlin.time = 1;
   options.perlin.dnoise = 0;
@@ -173,30 +207,75 @@ function randomMoon() {
 function createGUI() {
   var gui = new dat.GUI();
   var camGUI = gui.addFolder("Camera");
-  camGUI.add(options.camera, "zoom", 50, 250).name("Zoom").listen();
-  camGUI.add(options.camera, "speedY", -1, 1).name("Speed Y").listen();
-  camGUI.add(options.camera, "speedX", 0, 1).name("Speed X").listen();
-  camGUI.add(options.camera, "guide", false).name("Guide").listen();
+  camGUI
+    .add(options.camera, "zoom", 50, 250)
+    .name("Zoom")
+    .listen();
+  camGUI
+    .add(options.camera, "speedY", -1, 1)
+    .name("Speed Y")
+    .listen();
+  camGUI
+    .add(options.camera, "speedX", 0, 1)
+    .name("Speed X")
+    .listen();
+  camGUI
+    .add(options.camera, "guide", false)
+    .name("Guide")
+    .listen();
   //camGUI.open();
   //---
   var timeGUI = gui.addFolder("Setup");
-  timeGUI.add(options.perlin, "time", 0.0, 10.0).name("Speed").listen();
-  timeGUI.add(options.perlin, "morph", 0.0, 20.0).name("Morph").listen();
-  timeGUI.add(options.perlin, "dnoise", 0.0, 100.0).name("DNoise").listen();
+  timeGUI
+    .add(options.perlin, "time", 0.0, 10.0)
+    .name("Speed")
+    .listen();
+  timeGUI
+    .add(options.perlin, "morph", 0.0, 20.0)
+    .name("Morph")
+    .listen();
+  timeGUI
+    .add(options.perlin, "dnoise", 0.0, 100.0)
+    .name("DNoise")
+    .listen();
   timeGUI.open();
   //---
   var rgbGUI = gui.addFolder("RGB");
-  rgbGUI.add(options.chroma, "RGBr", 0.0, 10.0).name("Red").listen();
-  rgbGUI.add(options.chroma, "RGBg", 0.0, 10.0).name("Green").listen();
-  rgbGUI.add(options.chroma, "RGBb", 0.0, 10.0).name("Blue").listen();
-  rgbGUI.add(options.chroma, "RGBn", 0.0, 3.0).name("Black").listen();
-  rgbGUI.add(options.chroma, "RGBm", 0.0, 1.0).name("Chroma").listen();
+  rgbGUI
+    .add(options.chroma, "RGBr", 0.0, 10.0)
+    .name("Red")
+    .listen();
+  rgbGUI
+    .add(options.chroma, "RGBg", 0.0, 10.0)
+    .name("Green")
+    .listen();
+  rgbGUI
+    .add(options.chroma, "RGBb", 0.0, 10.0)
+    .name("Blue")
+    .listen();
+  rgbGUI
+    .add(options.chroma, "RGBn", 0.0, 3.0)
+    .name("Black")
+    .listen();
+  rgbGUI
+    .add(options.chroma, "RGBm", 0.0, 1.0)
+    .name("Chroma")
+    .listen();
   rgbGUI.open();
   //---
   var wirGUI = gui.addFolder("Sphere");
-  wirGUI.add(options.sphere, "wireframe", true).name("Wireframe").listen();
-  wirGUI.add(options.sphere, "points", true).name("Points").listen();
-  wirGUI.add(options.sphere, "psize", 1.0, 10.0).name("Point Size").step(1);
+  wirGUI
+    .add(options.sphere, "wireframe", true)
+    .name("Wireframe")
+    .listen();
+  wirGUI
+    .add(options.sphere, "points", true)
+    .name("Points")
+    .listen();
+  wirGUI
+    .add(options.sphere, "psize", 1.0, 10.0)
+    .name("Point Size")
+    .step(1);
   //wirGUI.open();
   console.log("Create GUI");
 }
@@ -211,8 +290,12 @@ skinElement = function (geo_frag = 5) {
     uniforms: uniforms,
     //attributes: attributes,
     side: THREE.DoubleSide,
-    vertexShader: document.getElementById("noiseVertexShader").textContent,
-    fragmentShader: document.getElementById("fragmentShader").textContent,
+    vertexShader: document.getElementById(
+      "noiseVertexShader"
+    ).textContent,
+    fragmentShader: document.getElementById(
+      "fragmentShader"
+    ).textContent,
     wireframe: options.sphere.wireframe,
   });
   this.point = new THREE.Points(geo, mat);
@@ -237,7 +320,12 @@ function createSkin() {
 var gridHelper;
 
 function createGrid(_gridY = -20) {
-  gridHelper = new THREE.GridHelper(100, 20, Theme._cont, Theme._gray);
+  gridHelper = new THREE.GridHelper(
+    100,
+    20,
+    Theme._cont,
+    Theme._gray
+  );
   gridHelper.position.y = _gridY;
   scene.add(gridHelper);
 }
@@ -249,11 +337,14 @@ var frame = Date.now();
 function createLife() {
   var time = Date.now();
   //---
-  uniforms.time.value = (options.perlin.time / 10000) * (time - frame);
+  uniforms.time.value =
+    (options.perlin.time / 10000) * (time - frame);
   uniforms.morph.value = options.perlin.morph;
   uniforms.dnoise.value = options.perlin.dnoise;
   //---
-  TweenMax.to(camera.position, 2, { z: 300 - options.camera.zoom });
+  TweenMax.to(camera.position, 2, {
+    z: 300 - options.camera.zoom,
+  });
   //---
   _skin.mesh.rotation.y += options.camera.speedY / 100;
   _skin.mesh.rotation.z += options.camera.speedX / 100;
