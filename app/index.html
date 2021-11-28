@@ -183,18 +183,6 @@
   </div>
   
   <script src="js/main.min.js"></script>
-  <!-- <script id="vertexShader" type="x-shader/x-vertex">
-    void main() {
-      gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-    }
-  </script> -->
-  <!-- <script id="ortho-vs" type="x-shader/x-vertex">
-    varying vec2 vUv;
-    void main() {
-      vUv = uv;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 0.5 );
-    }
-  </script> -->
   <script id="noiseVertexShader" type="x-shader/x-vertex">
     //
     // GLSL textureless classic 3D noise "cnoise",
@@ -366,31 +354,6 @@
       gl_PointSize = psize;
     }
   </script>
-  <!-- <script id="fs_ZoomBlur" type="x-shader/x-vertex">
-    varying vec2 vUv;
-    uniform sampler2D tDiffuse;
-    uniform vec2 resolution;
-    uniform float strength;
-    float random(vec3 scale,float seed){return fract(sin(dot(gl_FragCoord.xyz+seed,scale))*43758.5453+seed);}
-    void main() {
-      vec2 center = .5 * resolution;
-      vec4 color = vec4(0.0);
-      float total = 0.0;
-      vec2 toCenter=center-vUv*resolution;
-      float offset=random(vec3(12.9898,78.233,151.7182),0.0);
-      for(float t=0.0;t<=50.0;t++){
-        float percent=(t+offset)/40.0;
-        float weight = 100.0*(percent-percent*percent);
-        vec4 sample=texture2D(tDiffuse,vUv+toCenter*percent*strength/resolution);
-        sample.rgb*=sample.a;
-        color+=sample*weight;
-        total+=weight;
-      }
-      gl_FragColor = color/total;
-      gl_FragColor.rgb /= gl_FragColor.a;
-      //gl_FragDepth = color;
-    }
-  </script> -->
   <script id="fragmentShader" type="x-shader/x-vertex">
     //
     // GLSL textureless classic 3D noise "cnoise",
@@ -568,24 +531,10 @@
       gl_FragColor = vec4( color, 1.0 );
     }
   </script>
-  <!-- <script id="fs_Composite" type="x-shader/x-vertex">
-    varying vec2 vUv;
-    uniform sampler2D tBase;
-    uniform sampler2D tGlow;
-    void main() {
-      //Screen: X = 1- ((255-U)*(255-L))/255
-      //vec4 color = 1.0 - ( ( 1.0 - texture2D( tGlow, vec2( vUv.x, vUv.y ) ) ) * ( 1.0 - texture2D( tBase, vUv ) ) );
-      //vec4 color = mix( texture2D( tBase, vUv ), texture2D( tGlow, vec2( vUv.x, 1.0 - vUv.y ) ), .5 );
-      //vec4 color = texture2D( tBase, vUv ) + texture2D( tGlow, vUv ) * texture2D( tGlow, vUv );
-      vec4 color = texture2D( tGlow, vUv );
-      gl_FragColor = vec4( color.rgb, 1.0 );
-    }
-  </script> -->
-  <!-- partial -->
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/95/three.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/95/three.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script> -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js'></script>
   <script src="./moon.js"></script>
   <script src="./index.js"></script>

@@ -16,13 +16,8 @@
   min-width: 1440px;
   overflow: hidden;
   &__smilik {
-    // background-image: url(../images/smilik.png);
     height: 56px;
     width: 56px;
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: cover;
-    // margin-bottom: 55px;
     background: white;
     border-radius: 50%;
     position: relative;
@@ -70,10 +65,7 @@
   &__title {
     @extend %title-font;
     width: 786px;
-    background: linear-gradient(
-      rgba(225, 255, 248, 1) 100%,
-      rgba(250, 252, 243, 1) 100%
-    );
+    background: linear-gradient(rgba(225, 255, 248, 1) 100%, rgba(250, 252, 243, 1) 100%);
     background-clip: text;
     color: transparent;
     font-size: 72px;
@@ -243,11 +235,7 @@
         width: 295px;
         height: 2px;
         z-index: 1;
-        background: linear-gradient(
-          to right,
-          #85ffb2 233px,
-          rgba(100, 100, 100, 0.1) 62px
-        );
+        background: linear-gradient(to right, #85ffb2 233px, rgba(100, 100, 100, 0.1) 62px);
       }
     }
     &__information {
@@ -322,10 +310,6 @@
     }
   }
   &__developer-quiz {
-    // background-image: url(../images/DeveloperQuiz.png) center center;
-    // background-position: center;
-    // background-size: contain;
-    // object-fit: cover;
     width: 328px;
     position: absolute;
     left: 40px;
@@ -397,7 +381,6 @@
         color: #101010;
       }
       &-text {
-        // width: 217px;
         flex-grow: 0;
         margin: 4px 0 0;
         font-size: 12px;
@@ -408,11 +391,7 @@
     }
   }
   &__question {
-    // background-image: url(../images/Quastion.png);
-    // width: 213px;
-    // height: 285px;
     background-position: center;
-    // background-size: contain;
     object-fit: cover;
     position: absolute;
     right: 150px;
@@ -425,12 +404,7 @@
   min-width: 100%;
   z-index: 0;
   padding: 25rem 0 0;
-  background-image: url("../images/Noise.svg"),
-    linear-gradient(
-      180deg,
-      rgba(253, 255, 246, 0) 0%,
-      #fdfff6 100%
-    );
+  background-image: url("../images/Noise.svg"), linear-gradient(180deg, rgba(253, 255, 246, 0) 0%, #fdfff6 100%);
   position: absolute;
   overflow: hidden;
 }
@@ -439,15 +413,10 @@
   text-align: center;
   width: 100%;
   &__vector {
-    // background-image: url(../images/Vector@2x.png);
     width: 176.8px;
     height: 56.3px;
     margin: 0 auto 76px;
-    border-image-source: linear-gradient(
-      to right,
-      #000 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    border-image-source: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0) 100%);
     border-image-slice: 1;
     object-fit: contain;
   }
@@ -485,12 +454,10 @@
       &-icon {
         width: 25px;
         height: 25px;
-        // margin-bottom: 28px;
       }
 
       &-title {
         width: 350px;
-        // height: 56px;
         padding: 28px 0 18px;
         flex-grow: 0;
         font-family: Inter;
@@ -499,7 +466,6 @@
         line-height: 26px;
         text-align: left;
         color: #101010;
-        // margin-bottom: 18px;
       }
       &-text {
         width: 350px;
@@ -515,7 +481,6 @@
   }
 }
 .footer {
-  // padding-top: 159px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -550,11 +515,7 @@
     position: absolute;
     height: 1px;
     width: 1360px;
-    background: linear-gradient(
-      90deg,
-      #000000 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
     left: 40px;
     bottom: 107px;
   }
@@ -621,9 +582,6 @@ canvas {
 }
 
 @media only screen and (max-width: 768px) {
-  // body {
-  //   min-width: 768px;
-  // }
   .container {
     padding: 0 40px;
   }
@@ -634,7 +592,6 @@ canvas {
     width: 600px;
     font-size: 64px;
     line-height: 72px;
-    // height: 216px;
     padding-top: 50px;
     padding-bottom: 64px;
   }
@@ -644,7 +601,6 @@ canvas {
   canvas {
     position: absolute;
     top: 30px;
-    // left: 400px;
     right: 30px;
     width: 500px;
     height: 500px;
@@ -691,11 +647,7 @@ canvas {
           width: 223px;
           height: 2px;
           z-index: 1;
-          background: linear-gradient(
-            to right,
-            #85ffb2 176px,
-            rgba(100, 100, 100, 0.1) 47px
-          );
+          background: linear-gradient(to right, #85ffb2 176px, rgba(100, 100, 100, 0.1) 47px);
         }
       }
       &__information {
@@ -740,15 +692,10 @@ canvas {
     text-align: left;
     width: 100%;
     &__vector {
-      // background-image: url(../images/Vector@2x.png);
       width: 176.8px;
       height: 56.3px;
       margin: 0 auto 76px;
-      border-image-source: linear-gradient(
-        to right,
-        #000 0%,
-        rgba(0, 0, 0, 0) 100%
-      );
+      border-image-source: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0) 100%);
       border-image-slice: 1;
       object-fit: contain;
     }
@@ -788,12 +735,10 @@ canvas {
         &-icon {
           width: 25px;
           height: 25px;
-          // margin-bottom: 28px;
         }
 
         &-title {
           width: 300px;
-          // height: 56px;
           padding: 28px 0 16px;
           font-family: Inter;
           font-size: 18px;
@@ -801,7 +746,6 @@ canvas {
           line-height: 26px;
           text-align: left;
           color: #101010;
-          // margin-bottom: 18px;
         }
         &-text {
           width: 300px;
@@ -835,7 +779,6 @@ canvas {
         width: 60px;
         height: 60px;
         margin-right: 28px;
-        // margin-bottom: 15px;
       }
       &__assessment {
         position: absolute;
@@ -945,7 +888,6 @@ canvas {
         width: 100%;
         text-align: center;
         height: 16px;
-        // background: transparent;
       }
     }
   }
